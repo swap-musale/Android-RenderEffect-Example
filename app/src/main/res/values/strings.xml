@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Image Filter</string>
+    <string name="str_blur">Blur</string>
+    <string name="str_chain_effect">ChainEffect</string>
+    <string name="str_offset_effect">Offset Effects</string>
+    <string name="str_saturation">Saturation</string>
+    <string name="str_fullscreen_blur">FullScreen Blur</string>
+    <string name="str_offset">Offset</string>
+</resources>
