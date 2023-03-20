@@ -3,10 +3,12 @@ package com.example.imagefilter.ui.mainScreen.component
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.imagefilter.R
 
+@NonRestartableComposable
 @Composable
 fun AppToolBar() {
     TopAppBar(
@@ -18,6 +20,6 @@ fun AppToolBar() {
 
 @Preview
 @Composable
-fun AppToolBarPreview() {
+private fun AppToolBarPreview() {
     AppToolBar()
 }

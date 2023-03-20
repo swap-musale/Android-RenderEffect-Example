@@ -15,19 +15,19 @@ import com.example.imagefilter.ui.theme.spacing
 
 @Composable
 fun LabelledCheckbox(
-    checkBoxState: Boolean,
+    checked: Boolean,
     checkBoxLabel: String,
-    onCheckBoxStateChanged: ((Boolean) -> Unit),
-    isCheckBoxEnabled: Boolean = true,
+    onCheckedChange: ((Boolean) -> Unit),
+    enabled: Boolean = true,
 ) {
     Row(
         modifier = Modifier.padding(all = MaterialTheme.spacing.small),
         verticalAlignment = Alignment.CenterVertically,
     ) {
         Checkbox(
-            enabled = isCheckBoxEnabled,
-            checked = checkBoxState,
-            onCheckedChange = onCheckBoxStateChanged,
+            enabled = enabled,
+            checked = checked,
+            onCheckedChange = onCheckedChange,
             colors = CheckboxDefaults.colors(Color.Blue),
         )
         Text(text = checkBoxLabel)
@@ -36,10 +36,10 @@ fun LabelledCheckbox(
 
 @Preview
 @Composable
-fun LabelledCheckboxPreview() {
+private fun LabelledCheckboxPreview() {
     LabelledCheckbox(
-        checkBoxState = true,
+        checked = true,
         checkBoxLabel = "Blur",
-        onCheckBoxStateChanged = {},
+        onCheckedChange = {},
     )
 }

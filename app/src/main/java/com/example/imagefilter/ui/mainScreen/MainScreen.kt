@@ -68,9 +68,9 @@ fun MainScreen() {
             ) {
                 LabelledCheckbox(
                     checkBoxLabel = stringResource(id = R.string.str_blur),
-                    isCheckBoxEnabled = !saturationCheckBoxState && !offsetCheckBoxState && !chainEffectCheckBoxState,
-                    checkBoxState = blurCheckBoxState,
-                    onCheckBoxStateChanged = {
+                    enabled = !saturationCheckBoxState && !offsetCheckBoxState && !chainEffectCheckBoxState,
+                    checked = blurCheckBoxState,
+                    onCheckedChange = {
                         blurCheckBoxState = it
                         imageRenderEffect = if (blurCheckBoxState) {
                             RenderEffectUtil.createBlurEffect(
@@ -85,9 +85,9 @@ fun MainScreen() {
                 )
                 LabelledCheckbox(
                     checkBoxLabel = stringResource(id = R.string.str_saturation),
-                    isCheckBoxEnabled = !blurCheckBoxState && !offsetCheckBoxState && !chainEffectCheckBoxState,
-                    checkBoxState = saturationCheckBoxState,
-                    onCheckBoxStateChanged = {
+                    enabled = !blurCheckBoxState && !offsetCheckBoxState && !chainEffectCheckBoxState,
+                    checked = saturationCheckBoxState,
+                    onCheckedChange = {
                         saturationCheckBoxState = it
                         imageRenderEffect = if (saturationCheckBoxState) {
                             RenderEffectUtil.createSaturationEffect(saturation = RenderEffectUtil.DEFAULT_SATURATION)
@@ -98,9 +98,9 @@ fun MainScreen() {
                 )
                 LabelledCheckbox(
                     checkBoxLabel = stringResource(id = R.string.str_offset),
-                    isCheckBoxEnabled = !blurCheckBoxState && !saturationCheckBoxState && !chainEffectCheckBoxState,
-                    checkBoxState = offsetCheckBoxState,
-                    onCheckBoxStateChanged = {
+                    enabled = !blurCheckBoxState && !saturationCheckBoxState && !chainEffectCheckBoxState,
+                    checked = offsetCheckBoxState,
+                    onCheckedChange = {
                         offsetCheckBoxState = it
                         imageRenderEffect = if (offsetCheckBoxState) {
                             RenderEffectUtil.createOffsetEffect(
@@ -137,9 +137,9 @@ fun MainScreen() {
             ) {
                 LabelledCheckbox(
                     checkBoxLabel = stringResource(id = R.string.str_chain_effect),
-                    isCheckBoxEnabled = !blurCheckBoxState && !saturationCheckBoxState && !offsetCheckBoxState,
-                    checkBoxState = chainEffectCheckBoxState,
-                    onCheckBoxStateChanged = {
+                    enabled = !blurCheckBoxState && !saturationCheckBoxState && !offsetCheckBoxState,
+                    checked = chainEffectCheckBoxState,
+                    onCheckedChange = {
                         chainEffectCheckBoxState = it
                         imageRenderEffect = if (chainEffectCheckBoxState) {
                             RenderEffectUtil.createChainEffect(
@@ -153,8 +153,8 @@ fun MainScreen() {
                 )
                 LabelledCheckbox(
                     checkBoxLabel = stringResource(R.string.str_fullscreen_blur),
-                    checkBoxState = fullScreenCheckBoxState,
-                    onCheckBoxStateChanged = {
+                    checked = fullScreenCheckBoxState,
+                    onCheckedChange = {
                         fullScreenCheckBoxState = it
                         fullScreenRenderEffect = if (fullScreenCheckBoxState) {
                             RenderEffectUtil.createBlurEffect(

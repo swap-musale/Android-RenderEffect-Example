@@ -2,8 +2,10 @@ package com.example.imagefilter.ui.mainScreen.component
 
 import androidx.compose.material.Slider
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.NonRestartableComposable
 import androidx.compose.ui.tooling.preview.Preview
 
+@NonRestartableComposable
 @Composable
 fun AppRangeSlider(
     enabled: Boolean,
@@ -21,6 +23,10 @@ fun AppRangeSlider(
 
 @Preview
 @Composable
-fun AppRangeSliderPreview() {
-    AppRangeSlider(enabled = true, sliderValue = 10f, onValueChange = {})
+private fun AppRangeSliderPreview() {
+    AppRangeSlider(
+        enabled = true,
+        sliderValue = 10f,
+        onValueChange = {},
+    )
 }
